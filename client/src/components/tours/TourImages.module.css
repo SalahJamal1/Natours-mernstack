@@ -1,0 +1,14 @@
+.section {
+  overflow: hidden;
+}
+.imagesList {
+  display: flex;
+  list-style: none;
+  /* transform: skewX(15deg); */
+}
+.image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}

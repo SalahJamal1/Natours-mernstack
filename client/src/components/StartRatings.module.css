@@ -1,0 +1,8 @@
+.stars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: gold;
+  font-size: 3rem;
+}

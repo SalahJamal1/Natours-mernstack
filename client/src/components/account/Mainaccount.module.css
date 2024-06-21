@@ -1,0 +1,7 @@
+.main {
+  min-height: 75vh;
+  background-color: #f7f7f7f7;
+  display: flex;
+  width: 100%;
+  padding: 5rem 10rem;
+}

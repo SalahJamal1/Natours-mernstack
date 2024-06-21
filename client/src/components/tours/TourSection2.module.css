@@ -1,0 +1,81 @@
+.section2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.setion_2_lists {
+  padding: 9rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin-bottom: 4rem;
+}
+
+.heading {
+  color: #55c57a;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.items {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+.items span {
+  font-size: 1.3rem;
+  color: #444;
+  font-weight: 200;
+}
+
+.guides {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.guide {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.guide img {
+  height: 6rem;
+  border-radius: 50%;
+}
+
+.guide_heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.guide_heading span {
+  font-size: 1.3rem;
+  font-weight: 200;
+}
+
+.setion_2_descriptions {
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  padding: 9rem 5rem;
+  display: flex;
+  flex-direction: column;
+  border-right: solid 1px #f7f7f7f7;
+}
+.setion_2_descriptions p {
+  font-size: 1.5rem;
+  font-weight: 200;
+  line-height: 1.5;
+  width: 80%;
+}

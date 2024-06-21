@@ -1,0 +1,63 @@
+.setting {
+  background-color: #fff;
+  width: 50%;
+  border-radius: 15px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.1);
+}
+
+.dataSetting {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 7rem;
+}
+.dataSetting:last-child {
+  border-top: 2px solid #f2f2f2;
+}
+.dataSetting h3 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 5rem;
+  color: #55c57a;
+  text-align: center;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  /* align-items: start; */
+}
+
+.label {
+  font-size: 2rem;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  color: #444;
+}
+.input {
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #f2f2f2;
+  width: 45rem;
+  height: 5rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  margin-top: 5rem;
+}
+
+.cta {
+  background-color: #55c57a;
+  border: none;
+  border-radius: 25px;
+  padding: 1rem 2rem;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}

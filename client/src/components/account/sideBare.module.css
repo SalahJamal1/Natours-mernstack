@@ -1,0 +1,46 @@
+.sideBare {
+  background-color: #55c57a;
+  width: 30%;
+  padding: 5rem 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.setting {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-bottom: 9rem;
+}
+.item {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+}
+.admin {
+  margin-top: 3rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.x {
+  /* display: flex; */
+  padding-left: 3rem;
+}
+.heading {
+  color: #fff;
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #fff;
+  max-width: 25rem;
+}
+.link {
+  padding-left: 3rem;
+}
+
+.link:first-child {
+  border-left: solid 2px #fff;
+  display: flex;
+}
