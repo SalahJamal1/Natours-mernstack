@@ -28,10 +28,9 @@ const corsOptions = {
 };
 app.use(morgan('dev'));
 app.use(cors(corsOptions));
-app.options('*', cors());
-// app.options('*', cors(corsOptions)); // Handle preflight requests
+app.options('*', cors(corsOptions)); // Handle preflight requests
 
-app.set('trust proxy', 'loopback, linklocal, uniquelocal');
+// app.set('trust proxy', 'loopback, linklocal, uniquelocal');
 // app.set('trust proxy', 1);
 app.post(
   '/webhooke',
