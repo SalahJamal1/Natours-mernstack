@@ -22,14 +22,14 @@ const app = express();
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: 'cross-origin' }));
 
-// const corsOptions = {
-//   origin: ['http://localhost:5173', 'https://mern-stack-a4ay.vercel.app/'],
-//   credentials: true,
-// };
+const corsOptions = {
+  origin: ['http://localhost:5173', 'https://natours-mernstack.vercel.app'],
+  credentials: true,
+};
 app.use(morgan('dev'));
-app.use(cors());
-// app.options('*', cors());
-app.options('*', cors()); // Handle preflight requests
+app.use(cors(corsOptions));
+app.options('*', cors());
+// app.options('*', cors(corsOptions)); // Handle preflight requests
 
 app.set('trust proxy', 'loopback, linklocal, uniquelocal');
 // app.set('trust proxy', 1);
