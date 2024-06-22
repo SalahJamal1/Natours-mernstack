@@ -78,7 +78,7 @@ app.use((err, req, res, next) => {
       message: err.message,
       stack: err.stack,
     });
-  } else res.send('hello');
+  } else res.send(`${err}`);
 });
 
 module.exports = app;
