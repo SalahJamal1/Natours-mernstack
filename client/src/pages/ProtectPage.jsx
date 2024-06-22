@@ -9,9 +9,9 @@ function ProtectPage({ children }) {
 
   useEffect(
     function () {
-      if (!Auth && !isLoading) nav("/");
+      if (!Auth) nav("/");
     },
-    [Auth, nav, isLoading]
+    [Auth, nav]
   );
   if (isLoading) return <Loader />;
   return Auth ? children : null;
