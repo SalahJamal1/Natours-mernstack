@@ -34,9 +34,9 @@ function App() {
     {
       path: "account",
       element: (
-        <ProtectPage>
-          <Account />
-        </ProtectPage>
+        // <ProtectPage>
+        <Account />
+        // </ProtectPage>
       ),
     },
     {
