@@ -20,16 +20,15 @@ const { webhookCheckout } = require('./controller/book');
 const app = express();
 
 app.use(helmet());
-app.use(helmet.crossOriginResourcePolicy({ policy: 'cross-origin' }));
 
 const corsOptions = {
-  origin: ['https://natours-mernstack.vercel.app/'],
+  origin: 'https://natours-mernstack.vercel.app/',
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
 };
 app.use(morgan('dev'));
 app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)); // Handle preflight requests
+app.options('*', cors()); // Handle preflight requests
 
 // app.set('trust proxy', 'loopback, linklocal, uniquelocal');
 // app.set('trust proxy', 1);
