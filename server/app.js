@@ -63,7 +63,9 @@ app.use('/api/v1/tours', tours);
 app.use('/api/v1/users', users);
 app.use('/api/v1/reviews', reviews);
 app.use('/api/v1/booking', router);
-
+app.route('/').get((req, res) => {
+  res.send('hello');
+});
 app.all('*', (req, res, next) => {
   next(new AppError(`We cant find the ${req.originalUrl}`, 404));
 });
