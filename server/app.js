@@ -63,7 +63,7 @@ app.use('/api/v1/tours', tours);
 app.use('/api/v1/users', users);
 app.use('/api/v1/reviews', reviews);
 app.use('/api/v1/booking', router);
-app.use('/').get((req, res) => {
+app.use('/', (req, res) => {
   res.send('hello');
 });
 app.all('*', (req, res, next) => {
