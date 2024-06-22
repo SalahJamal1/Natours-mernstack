@@ -52,10 +52,7 @@ function Setting() {
             onChange={(e) => setemail(e.target.value)}
           />
           <div className={styles.photo}>
-            <img
-              src={`../../public/img/users/${user?.photo}`}
-              alt={user?.name}
-            />
+            <img src={`/img/users/${user?.photo}`} alt={user?.name} />
             <label className={styles.labels} htmlFor="photo">
               Choose new photo
             </label>

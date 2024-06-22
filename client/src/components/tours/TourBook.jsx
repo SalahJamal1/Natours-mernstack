@@ -22,7 +22,7 @@ function TourBook({ tour }) {
       <div className={styles.book}>
         <div className={styles.images}>
           {tour.images?.map((image, i) => (
-            <img src={`../../public/img/tours/${image}`} alt="" key={i} />
+            <img src={`/img/tours/${image}`} alt="" key={i} />
           ))}
         </div>
         <div className={styles.text}>

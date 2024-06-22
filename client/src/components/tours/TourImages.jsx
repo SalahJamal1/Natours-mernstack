@@ -5,7 +5,7 @@ function TourImages({ tour }) {
       <ul className={styles.imagesList}>
         {tour.images?.map((image, i) => (
           <li className={styles.image} key={i}>
-            <img src={`../../public/img/tours/${image}`} alt="" />
+            <img src={`/img/tours/${image}`} alt="" />
           </li>
         ))}
       </ul>

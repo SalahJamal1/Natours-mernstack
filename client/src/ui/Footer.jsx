@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className="footer">
       <img
-        src="/public/img/logo-green.png"
+        src="/img/logo-green.png"
         alt="footer-logo"
         className="footer-logo"
       />

@@ -10,7 +10,7 @@ function Card({ tour }) {
     <li className={styles.card}>
       <div className={styles.main_cards__box_image}>
         <img
-          src={`/public/img/tours/${tour.images[0]}`}
+          src={`/img/tours/${tour.images[0]}`}
           alt={tour.name}
           className={styles.main_cards_image}
         />

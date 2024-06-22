@@ -28,12 +28,12 @@ function Header({ Searchtour, setSearchtour }) {
             onChange={(e) => setSearchtour(e.target.value)}
           />
         </div>
-        <img src="/public/img/logo-white.png" alt="logo" className="logo" />
+        <img src="/img/logo-white.png" alt="logo" className="logo" />
         <ul className="nav_list">
           {user ? (
             <>
               <img
-                src={`../../public/img/users/${user.photo}`}
+                src={`/img/users/${user.photo}`}
                 alt={user.name}
                 className="nav_image"
               />

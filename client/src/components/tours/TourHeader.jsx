@@ -3,7 +3,7 @@ function TourHeader({ tour }) {
   return (
     <section className={styles.header}>
       <img
-        src={`../../public/img/tours/${tour.imageCover}`}
+        src={`/img/tours/${tour.imageCover}`}
         alt=""
         className={styles.imageCover}
       />
