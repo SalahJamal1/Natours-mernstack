@@ -14,6 +14,7 @@ createToken = (user, res, req) => {
     httpOnly: true,
     expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
     secure: true,
+    sameSite: 'None', // تعيين SameSite حسب احتياجات التطبيق
   });
   user.password = undefined;
 
