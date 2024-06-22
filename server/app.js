@@ -22,7 +22,10 @@ const app = express();
 app.use(helmet());
 
 const corsOptions = {
-  origin: 'https://natours-mernstack-b14j.vercel.app',
+  origin: [
+    'http://localhost:5173',
+    'https://natours-mernstack-b14j.vercel.app',
+  ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
 };
