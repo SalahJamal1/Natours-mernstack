@@ -1,6 +1,16 @@
+/* BELOW 1424px (Smaller desktops) */
+
+@media (max-width: 89em) {
+  html {
+    font-size: 59%;
+  }
+}
 /* BELOW 1344px (Smaller desktops) */
 
 @media (max-width: 84em) {
+  html {
+    font-size: 57%;
+  }
 }
 
 /* BELOW 1200px (Landscape Tablets) */
@@ -9,7 +19,7 @@
 @media (max-width: 75em) {
   html {
     /* 9px / 16px  */
-    font-size: 56.25%;
+    font-size: 54%;
   }
 }
 
@@ -36,4 +46,7 @@
 /**************************/
 
 @media (max-width: 34em) {
+  .search {
+    display: none;
+  }
 }
