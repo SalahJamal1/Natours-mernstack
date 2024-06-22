@@ -24,7 +24,7 @@ app.use(helmet());
 const corsOptions = {
   origin: [
     'https://natours-mernstack.vercel.app/',
-    'https://mern-stack-umber-six.vercel.app/',
+    'https://natours-mernstack-b14j.vercel.app/',
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
