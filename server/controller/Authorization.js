@@ -213,7 +213,7 @@ exports.logout = catchAsync(async (req, res, next) => {
     expires: new Date(0),
     secure: true,
   });
-  res.set('Cach-Control', 'no-store,max-age=0');
+  res.set('Cache-Control', 'no-store, max-age=0');
   res.status(200).json({
     status: 'success',
   });
