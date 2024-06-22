@@ -69,7 +69,8 @@ app.all('*', (req, res, next) => {
   next(new AppError(`We cant find the ${req.originalUrl}`, 404));
 });
 
-app.get('/', (req, res) => {
+app.get('/', (err, req, res) => {
+  if (err) return res.send(`${err}`);
   res.send(`hello`);
 });
 app.use((err, req, res, next) => {
