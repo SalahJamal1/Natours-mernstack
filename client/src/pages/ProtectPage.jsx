@@ -14,7 +14,7 @@ function ProtectPage({ children }) {
     [Auth, nav]
   );
   if (isLoading) return <Loader />;
-  return Auth ? children : null;
+  return children;
 }
 
 export default ProtectPage;
