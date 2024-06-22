@@ -69,17 +69,19 @@ app.all('*', (req, res, next) => {
   next(new AppError(`We cant find the ${req.originalUrl}`, 404));
 });
 
+app.get('/', (req, res) => {
+  res.send(`hello`);
+});
 app.use((err, req, res, next) => {
   if (req.originalUrl.startsWith('/api')) {
     err.statusCode = err.statusCode || 500;
     err.status = err.status || 'error';
-    // res.status(err.statusCode).json({
-    //   status: err.status,
-    //   message: err.message,
-    //   stack: err.stack,
-    // });
-    res.status(400).send(`${err}`);
-  } else res.send(`${err}`);
+    res.status(err.statusCode).json({
+      status: err.status,
+      message: err.message,
+      stack: err.stack,
+    });
+  }
 });
 
 module.exports = app;
