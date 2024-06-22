@@ -8,7 +8,7 @@ exports.checkout = catchAsync(async (req, res, next) => {
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     // success_url: `${req.protocol}://localhost:5173/?price=${tour.price}&tour=${tour._id}&user=${req.user._id}`,
-    success_url: `${req.protocol}://natours-mernstack-b14j.vercel.app/`,
+    success_url: `${req.protocol}://natours-mernstack-b14j.vercel.app`,
     cancel_url: `${req.protocol}://natours-mernstack-b14j.vercel.app/tour/${tour.slug}`,
     customer_email: req.user.email,
     client_reference_id: req.user.id,
@@ -50,7 +50,7 @@ exports.checkout = catchAsync(async (req, res, next) => {
 // });
 const createBookingCheckout = async (metadata) => {
   const { tour, user, price } = metadata;
-  await Booking.create({ tour, user, price });
+  await Booke.create({ tour, user, price });
 };
 
 exports.webhookCheckout = (req, res, next) => {
