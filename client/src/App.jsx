@@ -20,7 +20,7 @@ function App() {
       element: <Overview />,
     },
     {
-      path: "login",
+      path: "/login",
       element: <Login />,
     },
     {
