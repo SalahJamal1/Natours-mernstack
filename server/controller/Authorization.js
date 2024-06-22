@@ -212,7 +212,6 @@ exports.logout = catchAsync(async (req, res, next) => {
     httpOnly: true,
     expires: new Date(0),
     secure: true,
-    sameSite: 'None', // تعيين SameSite حسب احتياجات التطبيق
   });
   res.set('Cach-Control', 'no-store,max-age=0');
   res.status(200).json({
