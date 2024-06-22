@@ -13,7 +13,7 @@ const Signup = lazy(() => import("./pages/Signup"));
 const Tour = lazy(() => import("./pages/Tour"));
 
 function App() {
-  // Getcurrent();
+  Getcurrent();
   const router = createBrowserRouter([
     {
       path: "/",

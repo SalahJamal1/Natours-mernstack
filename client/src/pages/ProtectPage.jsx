@@ -9,12 +9,12 @@ function ProtectPage({ children }) {
 
   useEffect(
     function () {
+      if (isLoading) return;
       if (!Auth) nav("/");
     },
-    [Auth, nav]
+    [Auth, nav, isLoading]
   );
-  if (isLoading) return <Loader />;
-  return children;
+  return Auth ? children : null;
 }
 
 export default ProtectPage;
