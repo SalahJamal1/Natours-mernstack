@@ -8,8 +8,8 @@ export const Accountlogin = createAsyncThunk(
       const res = await Login(data);
       return res.data.user;
     } catch (err) {
-      console.log(err.message);
-      return rejectWithValue(err.message);
+      console.log(err);
+      return rejectWithValue(err);
     }
   }
 );
@@ -32,6 +32,7 @@ export const Account = createSlice({
     Auth: false,
     user: null,
     error: "",
+    err: "",
     isLoading: true,
   },
   reducers: {
@@ -45,6 +46,7 @@ export const Account = createSlice({
       .addCase(Accountlogin.fulfilled, (state, action) => {
         state.user = action.payload;
         state.Auth = true;
+        state.error = "";
       })
       .addCase(Accountlogin.rejected, (state, action) => {
         state.Auth = false;
@@ -60,7 +62,7 @@ export const Account = createSlice({
       })
       .addCase(AccountgetUser.rejected, (state, action) => {
         state.Auth = false;
-        state.error = action.payload;
+        state.err = action.payload;
         state.isLoading = false;
       }),
 });

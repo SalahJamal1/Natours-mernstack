@@ -6,7 +6,7 @@ import { Accountlogin } from "../../store/Account";
 function FromLogin() {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
-  const { Auth } = useSelector((store) => store.Account);
+  const { Auth, error } = useSelector((store) => store.Account);
   const dispatch = useDispatch();
   const nav = useNavigate();
   async function handelLogin(e) {
@@ -27,6 +27,7 @@ function FromLogin() {
   return (
     <form className={styles.form} onSubmit={handelLogin}>
       <h1 className={styles.form_heading}>LOG INTO YOUR ACCOUNT</h1>
+      {error && <p className="errors">{error.response.data.message}</p>}
       <label className={styles.form_label} htmlFor="email">
         Email address
       </label>

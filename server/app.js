@@ -23,8 +23,9 @@ app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: 'cross-origin' }));
 
 const corsOptions = {
-  origin: ['http://localhost:5173', 'https://natours-mernstack.vercel.app'],
+  origin: ['https://natours-mernstack.vercel.app/'],
   credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
 };
 app.use(morgan('dev'));
 app.use(cors(corsOptions));
@@ -77,7 +78,7 @@ app.use((err, req, res, next) => {
       message: err.message,
       stack: err.stack,
     });
-  }
+  } else res.send('hello');
 });
 
 module.exports = app;

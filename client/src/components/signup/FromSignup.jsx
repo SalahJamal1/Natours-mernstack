@@ -7,16 +7,25 @@ function FromSignup() {
   const [password, setpassword] = useState("");
   const [passwordConfrim, setpasswordConfrim] = useState("");
   const [name, setname] = useState("");
+  const [error, sererror] = useState("");
   const nav = useNavigate();
   async function handelSignup(e) {
     e.preventDefault();
+
     if (!email && !password && !name && !passwordConfrim) return;
-    const data = await Signup({ email, password, name, passwordConfrim });
-    if (data.data.status === "success") nav("/login");
+    try {
+      const data = await Signup({ email, password, name, passwordConfrim });
+      if (data.data.status === "success") nav("/login");
+    } catch (err) {
+      console.log(err);
+      sererror(err);
+    }
   }
   return (
     <form className={styles.form} onSubmit={handelSignup}>
       <h1 className={styles.form_heading}>SIGN UP YOUR ACCOUNT</h1>
+      {error && <p className="errors">{error.response.data.message}</p>}
+
       <div className={styles.forms}>
         <div className="">
           <label className={styles.form_label} htmlFor="email">
