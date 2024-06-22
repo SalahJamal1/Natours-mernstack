@@ -8,10 +8,15 @@ exports.checkout = catchAsync(async (req, res, next) => {
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     // success_url: `${req.protocol}://localhost:5173/?price=${tour.price}&tour=${tour._id}&user=${req.user._id}`,
-    success_url: `${req.protocol}://localhost:5173/`,
-    cancel_url: `${req.protocol}://localhost:5173/tour/${tour.slug}`,
+    success_url: `${req.protocol}://${req.get('host')}/`,
+    cancel_url: `${req.protocol}://${req.get('host')}/tour/${tour.slug}`,
     customer_email: req.user.email,
     client_reference_id: req.user.id,
+    metadata: {
+      user: req.user._id.toString(),
+      tour: tour.id.toString(),
+      price: tour.price,
+    },
     mode: 'payment',
     line_items: [
       {
@@ -20,7 +25,9 @@ exports.checkout = catchAsync(async (req, res, next) => {
           currency: 'usd',
           product_data: {
             name: tour.name,
-            images: [`${req.protocol}://localhost:5173/${tour.imageCover}`],
+            images: [
+              `${req.protocol}://${req.get('host')}/img/tours/${tour.imageCover}`,
+            ],
           },
         },
         quantity: 1,
@@ -41,10 +48,8 @@ exports.checkout = catchAsync(async (req, res, next) => {
 
 //   res.redirect(req.originalUrl.split('?')[0]);
 // });
-const createBookingCheckout = async (session) => {
-  const tour = session.client_reference_id;
-  const user = (await User.findOne({ email: session.customer_email })).id;
-  const price = session.display_items[0].amount / 100;
+const createBookingCheckout = async (metadata) => {
+  const { tour, user, price } = metadata;
   await Booking.create({ tour, user, price });
 };
 
@@ -62,8 +67,10 @@ exports.webhookCheckout = (req, res, next) => {
     return res.status(400).send(`Webhook error: ${err.message}`);
   }
 
-  if (event.type === 'checkout.session.completed')
-    createBookingCheckout(event.data.object);
+  if (event.type === 'checkout.session.completed') {
+    const session = event.data.object;
+    createBookingCheckout(session.metadata);
+  }
 
   res.status(200).json({ received: true });
 };

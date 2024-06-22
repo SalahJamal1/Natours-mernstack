@@ -34,10 +34,7 @@ function TourSection2({ tour }) {
           <h3 className={styles.heading}>YOUR TOUR GUIDES</h3>
           {guides?.map((guide, i) => (
             <li className={styles.guide} key={i}>
-              <img
-                src={`../../public/img/users/${guide.photo}`}
-                alt="user.name"
-              />
+              <img src={`/img/users/${guide.photo}`} alt="user.name" />
               <h6 className={styles.guide_heading}>
                 {guide.role === "guide" ? "GUIDE" : guide.role}
                 <span>{guide.name}</span>
