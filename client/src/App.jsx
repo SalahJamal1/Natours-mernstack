@@ -12,46 +12,50 @@ const Login = lazy(() => import("./pages/Login"));
 const Signup = lazy(() => import("./pages/Signup"));
 const Tour = lazy(() => import("./pages/Tour"));
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Overview />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
+  },
+  {
+    path: "/tour/:id",
+    element: <Tour />,
+  },
+  {
+    path: "/account",
+    element: (
+      <ProtectPage>
+        <Account />
+      </ProtectPage>
+    ),
+  },
+  {
+    path: "/forgetpassword",
+    element: <Forgetpassword />,
+  },
+  {
+    path: "/restpassword/:id",
+    element: <ResetPassword />,
+  },
+  {
+    path: "/order/new",
+    element: <Loader />,
+  },
+  {
+    path: "*",
+    element: <Pagenotfound />,
+  },
+]);
 function App() {
   Getcurrent();
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Overview />,
-    },
-    {
-      path: "login",
-      element: <Login />,
-    },
-    {
-      path: "signup",
-      element: <Signup />,
-    },
-    {
-      path: "tour/:id",
-      element: <Tour />,
-    },
-    {
-      path: "account",
-      element: (
-        <ProtectPage>
-          <Account />
-        </ProtectPage>
-      ),
-    },
-    {
-      path: "forgetpassword",
-      element: <Forgetpassword />,
-    },
-    {
-      path: "restpassword/:id",
-      element: <ResetPassword />,
-    },
-    {
-      path: "*",
-      element: <Pagenotfound />,
-    },
-  ]);
 
   return (
     <Suspense fallback={<Loader />}>
